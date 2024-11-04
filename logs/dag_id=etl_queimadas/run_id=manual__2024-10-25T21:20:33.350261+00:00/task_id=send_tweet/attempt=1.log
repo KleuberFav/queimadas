@@ -1,0 +1,39 @@
+[2024-10-25T21:20:34.823+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.send_tweet manual__2024-10-25T21:20:33.350261+00:00 [queued]>
+[2024-10-25T21:20:34.829+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.send_tweet manual__2024-10-25T21:20:33.350261+00:00 [queued]>
+[2024-10-25T21:20:34.829+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-25T21:20:34.839+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): send_tweet> on 2024-10-25 21:20:33.350261+00:00
+[2024-10-25T21:20:34.845+0000] {standard_task_runner.py:60} INFO - Started process 9808 to run task
+[2024-10-25T21:20:34.847+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'send_tweet', 'manual__2024-10-25T21:20:33.350261+00:00', '--job-id', '185', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpwc99g9k9']
+[2024-10-25T21:20:34.848+0000] {standard_task_runner.py:88} INFO - Job 185: Subtask send_tweet
+[2024-10-25T21:20:34.879+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.send_tweet manual__2024-10-25T21:20:33.350261+00:00 [running]> on host 622b1ac036ca
+[2024-10-25T21:20:34.949+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='send_tweet' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T21:20:33.350261+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-25T21:20:33.350261+00:00'
+[2024-10-25T21:20:34.952+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.8/collections/__init__.py", line 898, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.8/collections/__init__.py", line 890, in __missing__
+    raise KeyError(key)
+KeyError: 'api_secret_key'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_cria_emr.py", line 230, in _send_tweet
+    api_secret_key = config.get('TWITTER', 'API_SECRET_KEY')
+  File "/usr/local/lib/python3.8/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'api_secret_key' in section: 'TWITTER'
+[2024-10-25T21:20:34.960+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=etl_queimadas, task_id=send_tweet, execution_date=20241025T212033, start_date=20241025T212034, end_date=20241025T212034
+[2024-10-25T21:20:34.969+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 185 for task send_tweet (No option 'api_secret_key' in section: 'TWITTER'; 9808)
+[2024-10-25T21:20:34.978+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-10-25T21:20:34.991+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

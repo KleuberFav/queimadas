@@ -1,0 +1,13 @@
+[2024-10-25T21:58:48.102+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_bronze manual__2024-10-25T21:53:17.140385+00:00 [queued]>
+[2024-10-25T21:58:48.107+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_bronze manual__2024-10-25T21:53:17.140385+00:00 [queued]>
+[2024-10-25T21:58:48.107+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-25T21:58:48.115+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_bronze> on 2024-10-25 21:53:17.140385+00:00
+[2024-10-25T21:58:48.122+0000] {standard_task_runner.py:60} INFO - Started process 10501 to run task
+[2024-10-25T21:58:48.124+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_bronze', 'manual__2024-10-25T21:53:17.140385+00:00', '--job-id', '194', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpf015drqe']
+[2024-10-25T21:58:48.126+0000] {standard_task_runner.py:88} INFO - Job 194: Subtask add_step_job_bronze
+[2024-10-25T21:58:48.161+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_bronze manual__2024-10-25T21:53:17.140385+00:00 [running]> on host 622b1ac036ca
+[2024-10-25T21:58:48.217+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_bronze' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T21:53:17.140385+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-25T21:53:17.140385+00:00'
+[2024-10-25T21:58:53.915+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-25T21:58:53.922+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_bronze, execution_date=20241025T215317, start_date=20241025T215848, end_date=20241025T215853
+[2024-10-25T21:58:53.949+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-25T21:58:53.996+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

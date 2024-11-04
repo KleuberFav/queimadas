@@ -1,0 +1,14 @@
+[2024-10-25T18:07:45.492+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.terminate_emr_cluster manual__2024-10-25T17:57:11.005329+00:00 [queued]>
+[2024-10-25T18:07:45.500+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.terminate_emr_cluster manual__2024-10-25T17:57:11.005329+00:00 [queued]>
+[2024-10-25T18:07:45.500+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-25T18:07:45.511+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): terminate_emr_cluster> on 2024-10-25 17:57:11.005329+00:00
+[2024-10-25T18:07:45.519+0000] {standard_task_runner.py:60} INFO - Started process 6599 to run task
+[2024-10-25T18:07:45.521+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'terminate_emr_cluster', 'manual__2024-10-25T17:57:11.005329+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpqwombb5d']
+[2024-10-25T18:07:45.523+0000] {standard_task_runner.py:88} INFO - Job 159: Subtask terminate_emr_cluster
+[2024-10-25T18:07:45.552+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.terminate_emr_cluster manual__2024-10-25T17:57:11.005329+00:00 [running]> on host 622b1ac036ca
+[2024-10-25T18:07:45.606+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='terminate_emr_cluster' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T17:57:11.005329+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-25T17:57:11.005329+00:00'
+[2024-10-25T18:07:46.216+0000] {logging_mixin.py:188} INFO - Cluster Id j-2FLHK8OW5ST9O encerrado!!!
+[2024-10-25T18:07:46.217+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-25T18:07:46.224+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=terminate_emr_cluster, execution_date=20241025T175711, start_date=20241025T180745, end_date=20241025T180746
+[2024-10-25T18:07:46.254+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-25T18:07:46.266+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

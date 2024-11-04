@@ -1,0 +1,32 @@
+[2024-10-30T20:30:23.353+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_estado manual__2024-10-30T20:21:53.281604+00:00 [queued]>
+[2024-10-30T20:30:23.363+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_estado manual__2024-10-30T20:21:53.281604+00:00 [queued]>
+[2024-10-30T20:30:23.363+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-30T20:30:23.375+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_gold_estado> on 2024-10-30 20:21:53.281604+00:00
+[2024-10-30T20:30:23.383+0000] {standard_task_runner.py:60} INFO - Started process 7180 to run task
+[2024-10-30T20:30:23.385+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_gold_estado', 'manual__2024-10-30T20:21:53.281604+00:00', '--job-id', '245', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmp0bnobwzp']
+[2024-10-30T20:30:23.387+0000] {standard_task_runner.py:88} INFO - Job 245: Subtask add_step_job_gold_estado
+[2024-10-30T20:30:23.425+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_gold_estado manual__2024-10-30T20:21:53.281604+00:00 [running]> on host 3f04bb9d0c09
+[2024-10-30T20:30:23.503+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_gold_estado' AIRFLOW_CTX_EXECUTION_DATE='2024-10-30T20:21:53.281604+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-30T20:21:53.281604+00:00'
+[2024-10-30T20:30:39.863+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:30:50.349+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:00.883+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:11.396+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:21.890+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:32.354+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:42.834+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:31:53.350+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:03.835+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:14.351+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:24.864+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:35.346+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:45.837+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:32:56.483+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): PENDING
+[2024-10-30T20:33:07.115+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): RUNNING
+[2024-10-30T20:33:17.621+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): RUNNING
+[2024-10-30T20:33:28.140+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): RUNNING
+[2024-10-30T20:33:38.650+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): RUNNING
+[2024-10-30T20:33:49.201+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-03419592V8NKQL356WSM): COMPLETED
+[2024-10-30T20:33:49.202+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-30T20:33:49.209+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_gold_estado, execution_date=20241030T202153, start_date=20241030T203023, end_date=20241030T203349
+[2024-10-30T20:33:49.240+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-30T20:33:49.254+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

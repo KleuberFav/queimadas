@@ -1,0 +1,20 @@
+[2024-11-01T17:25:43.528+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_bioma manual__2024-11-01T17:17:06.410650+00:00 [queued]>
+[2024-11-01T17:25:43.542+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_bioma manual__2024-11-01T17:17:06.410650+00:00 [queued]>
+[2024-11-01T17:25:43.543+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-01T17:25:43.566+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_gold_bioma> on 2024-11-01 17:17:06.410650+00:00
+[2024-11-01T17:25:43.577+0000] {standard_task_runner.py:60} INFO - Started process 15104 to run task
+[2024-11-01T17:25:43.580+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_gold_bioma', 'manual__2024-11-01T17:17:06.410650+00:00', '--job-id', '278', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpdqwnk8v_']
+[2024-11-01T17:25:43.583+0000] {standard_task_runner.py:88} INFO - Job 278: Subtask add_step_job_gold_bioma
+[2024-11-01T17:25:43.627+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_gold_bioma manual__2024-11-01T17:17:06.410650+00:00 [running]> on host 3f04bb9d0c09
+[2024-11-01T17:25:43.719+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_gold_bioma' AIRFLOW_CTX_EXECUTION_DATE='2024-11-01T17:17:06.410650+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-01T17:17:06.410650+00:00'
+[2024-11-01T17:26:00.070+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): PENDING
+[2024-11-01T17:26:10.650+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): PENDING
+[2024-11-01T17:26:21.174+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): RUNNING
+[2024-11-01T17:26:31.762+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): RUNNING
+[2024-11-01T17:26:42.358+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): RUNNING
+[2024-11-01T17:26:52.853+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): RUNNING
+[2024-11-01T17:27:03.386+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Bioma" (ID: s-04154921F28H3VPDHXNE): COMPLETED
+[2024-11-01T17:27:03.387+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-11-01T17:27:03.397+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_gold_bioma, execution_date=20241101T171706, start_date=20241101T172543, end_date=20241101T172703
+[2024-11-01T17:27:03.453+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-01T17:27:03.485+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

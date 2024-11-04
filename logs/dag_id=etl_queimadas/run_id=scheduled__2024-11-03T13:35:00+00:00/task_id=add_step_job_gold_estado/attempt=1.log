@@ -1,0 +1,25 @@
+[2024-11-04T13:41:33.720+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_estado scheduled__2024-11-03T13:35:00+00:00 [queued]>
+[2024-11-04T13:41:33.727+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_gold_estado scheduled__2024-11-03T13:35:00+00:00 [queued]>
+[2024-11-04T13:41:33.727+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-04T13:41:33.738+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_gold_estado> on 2024-11-03 13:35:00+00:00
+[2024-11-04T13:41:33.743+0000] {standard_task_runner.py:60} INFO - Started process 540 to run task
+[2024-11-04T13:41:33.745+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_gold_estado', 'scheduled__2024-11-03T13:35:00+00:00', '--job-id', '310', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpgeeaqedx']
+[2024-11-04T13:41:33.747+0000] {standard_task_runner.py:88} INFO - Job 310: Subtask add_step_job_gold_estado
+[2024-11-04T13:41:33.790+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_gold_estado scheduled__2024-11-03T13:35:00+00:00 [running]> on host 3f04bb9d0c09
+[2024-11-04T13:41:33.862+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_gold_estado' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T13:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-03T13:35:00+00:00'
+[2024-11-04T13:41:50.081+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:00.613+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:11.081+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:21.615+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:32.147+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:42.648+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): PENDING
+[2024-11-04T13:42:53.131+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): RUNNING
+[2024-11-04T13:43:03.611+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): RUNNING
+[2024-11-04T13:43:14.148+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): RUNNING
+[2024-11-04T13:43:24.670+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): RUNNING
+[2024-11-04T13:43:35.178+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): RUNNING
+[2024-11-04T13:43:45.670+0000] {logging_mixin.py:188} INFO - Status do passo "Agregar e Carregar na Camada Gold - Estado" (ID: s-082594038D2CV15N9C85): COMPLETED
+[2024-11-04T13:43:45.671+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-11-04T13:43:45.678+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_gold_estado, execution_date=20241103T133500, start_date=20241104T134133, end_date=20241104T134345
+[2024-11-04T13:43:45.729+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-04T13:43:45.743+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

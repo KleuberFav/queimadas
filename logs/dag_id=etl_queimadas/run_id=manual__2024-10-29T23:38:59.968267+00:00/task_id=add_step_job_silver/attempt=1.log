@@ -1,0 +1,24 @@
+[2024-10-29T23:43:37.284+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_silver manual__2024-10-29T23:38:59.968267+00:00 [queued]>
+[2024-10-29T23:43:37.291+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_silver manual__2024-10-29T23:38:59.968267+00:00 [queued]>
+[2024-10-29T23:43:37.291+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-29T23:43:37.301+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_silver> on 2024-10-29 23:38:59.968267+00:00
+[2024-10-29T23:43:37.307+0000] {standard_task_runner.py:60} INFO - Started process 204 to run task
+[2024-10-29T23:43:37.309+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_silver', 'manual__2024-10-29T23:38:59.968267+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpe8thniu3']
+[2024-10-29T23:43:37.311+0000] {standard_task_runner.py:88} INFO - Job 205: Subtask add_step_job_silver
+[2024-10-29T23:43:37.351+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_silver manual__2024-10-29T23:38:59.968267+00:00 [running]> on host 3f04bb9d0c09
+[2024-10-29T23:43:37.427+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_silver' AIRFLOW_CTX_EXECUTION_DATE='2024-10-29T23:38:59.968267+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-29T23:38:59.968267+00:00'
+[2024-10-29T23:43:53.841+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): PENDING
+[2024-10-29T23:44:04.374+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): PENDING
+[2024-10-29T23:44:15.058+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): PENDING
+[2024-10-29T23:44:25.655+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): PENDING
+[2024-10-29T23:44:36.178+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): PENDING
+[2024-10-29T23:44:46.687+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): RUNNING
+[2024-10-29T23:44:57.261+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): RUNNING
+[2024-10-29T23:45:07.947+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): RUNNING
+[2024-10-29T23:45:18.696+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): RUNNING
+[2024-10-29T23:45:29.406+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): RUNNING
+[2024-10-29T23:45:39.952+0000] {logging_mixin.py:188} INFO - Status do passo "Transformar e Carregar na Camada Silver" (ID: s-0461997CE7R6MMGS50T): COMPLETED
+[2024-10-29T23:45:39.953+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-29T23:45:39.961+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_silver, execution_date=20241029T233859, start_date=20241029T234337, end_date=20241029T234539
+[2024-10-29T23:45:40.005+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-29T23:45:40.047+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

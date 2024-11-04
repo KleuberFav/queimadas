@@ -1,0 +1,27 @@
+[2024-10-24T21:35:47.495+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.wait_step_job manual__2024-10-24T21:35:42.131511+00:00 [queued]>
+[2024-10-24T21:35:47.501+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.wait_step_job manual__2024-10-24T21:35:42.131511+00:00 [queued]>
+[2024-10-24T21:35:47.502+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-24T21:35:47.510+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): wait_step_job> on 2024-10-24 21:35:42.131511+00:00
+[2024-10-24T21:35:47.516+0000] {standard_task_runner.py:60} INFO - Started process 1112 to run task
+[2024-10-24T21:35:47.518+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'wait_step_job', 'manual__2024-10-24T21:35:42.131511+00:00', '--job-id', '113', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmp7x_kvbmz']
+[2024-10-24T21:35:47.519+0000] {standard_task_runner.py:88} INFO - Job 113: Subtask wait_step_job
+[2024-10-24T21:35:47.563+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.wait_step_job manual__2024-10-24T21:35:42.131511+00:00 [running]> on host 622b1ac036ca
+[2024-10-24T21:35:47.617+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='wait_step_job' AIRFLOW_CTX_EXECUTION_DATE='2024-10-24T21:35:42.131511+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-24T21:35:42.131511+00:00'
+[2024-10-24T21:35:48.239+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-24T21:35:58.741+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_cria_emr.py", line 99, in _wait_step_job
+    raise Exception(f'Erro! Estado: {state}')  # Corrigido 'stare' para 'state'
+Exception: Erro! Estado: CANCELLED
+[2024-10-24T21:35:58.748+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=etl_queimadas, task_id=wait_step_job, execution_date=20241024T213542, start_date=20241024T213547, end_date=20241024T213558
+[2024-10-24T21:35:58.761+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 113 for task wait_step_job (Erro! Estado: CANCELLED; 1112)
+[2024-10-24T21:35:58.770+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-10-24T21:35:58.786+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

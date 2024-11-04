@@ -1,0 +1,96 @@
+[2024-10-25T17:00:20.710+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.check_emr_cluster_state manual__2024-10-25T17:00:13.518694+00:00 [queued]>
+[2024-10-25T17:00:20.717+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.check_emr_cluster_state manual__2024-10-25T17:00:13.518694+00:00 [queued]>
+[2024-10-25T17:00:20.717+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-25T17:00:20.726+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): check_emr_cluster_state> on 2024-10-25 17:00:13.518694+00:00
+[2024-10-25T17:00:20.732+0000] {standard_task_runner.py:60} INFO - Started process 5553 to run task
+[2024-10-25T17:00:20.734+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'check_emr_cluster_state', 'manual__2024-10-25T17:00:13.518694+00:00', '--job-id', '152', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmp8kfbwohk']
+[2024-10-25T17:00:20.736+0000] {standard_task_runner.py:88} INFO - Job 152: Subtask check_emr_cluster_state
+[2024-10-25T17:00:20.764+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.check_emr_cluster_state manual__2024-10-25T17:00:13.518694+00:00 [running]> on host 622b1ac036ca
+[2024-10-25T17:00:20.815+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='check_emr_cluster_state' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T17:00:13.518694+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-25T17:00:13.518694+00:00'
+[2024-10-25T17:00:21.500+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:00:32.029+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:00:42.602+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:00:53.189+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:03.787+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:14.444+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:25.061+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:35.572+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:46.211+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:01:56.722+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:02:07.281+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:02:17.913+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:02:28.414+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:02:39.030+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:02:49.537+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:00.119+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:10.641+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:21.207+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:31.760+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:42.301+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:03:52.853+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:03.373+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:13.926+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:24.604+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:35.088+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:45.701+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:04:56.345+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:06.850+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:17.340+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:28.002+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:38.711+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:49.285+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:05:59.814+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:06:10.377+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:06:20.930+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:06:31.784+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:06:42.428+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:06:53.082+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:03.592+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:14.096+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:24.697+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:35.370+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:45.915+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:07:56.463+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:07.011+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:17.562+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:28.109+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:38.675+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:49.267+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:08:59.810+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:09:10.393+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:09:20.912+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:09:31.504+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:09:42.184+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:09:52.893+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:03.423+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:14.003+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:24.739+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:35.311+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:46.225+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:10:56.892+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:11:07.429+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:11:17.973+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:11:28.556+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:11:39.051+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: STARTING
+[2024-10-25T17:11:49.647+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:00.278+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:10.859+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:21.477+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:32.005+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:42.573+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:12:53.435+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:03.966+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:14.622+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:25.181+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:35.923+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:46.591+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:13:57.442+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:14:08.093+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:14:18.726+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:14:29.286+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:14:39.821+0000] {logging_mixin.py:188} INFO - Cluster ainda está iniciando... Estado: BOOTSTRAPPING
+[2024-10-25T17:14:50.428+0000] {logging_mixin.py:188} INFO - Cluster está pronto para adicionar passos... Estado: WAITING
+[2024-10-25T17:14:50.432+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-25T17:14:50.456+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=check_emr_cluster_state, execution_date=20241025T170013, start_date=20241025T170020, end_date=20241025T171450
+[2024-10-25T17:14:50.511+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-25T17:14:50.532+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

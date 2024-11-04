@@ -1,0 +1,17 @@
+[2024-11-04T13:39:23.199+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_bronze scheduled__2024-11-03T13:35:00+00:00 [queued]>
+[2024-11-04T13:39:23.206+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.add_step_job_bronze scheduled__2024-11-03T13:35:00+00:00 [queued]>
+[2024-11-04T13:39:23.206+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-04T13:39:23.215+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): add_step_job_bronze> on 2024-11-03 13:35:00+00:00
+[2024-11-04T13:39:23.221+0000] {standard_task_runner.py:60} INFO - Started process 497 to run task
+[2024-11-04T13:39:23.223+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'add_step_job_bronze', 'scheduled__2024-11-03T13:35:00+00:00', '--job-id', '307', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmp29znjl0a']
+[2024-11-04T13:39:23.225+0000] {standard_task_runner.py:88} INFO - Job 307: Subtask add_step_job_bronze
+[2024-11-04T13:39:23.257+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.add_step_job_bronze scheduled__2024-11-03T13:35:00+00:00 [running]> on host 3f04bb9d0c09
+[2024-11-04T13:39:23.312+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='add_step_job_bronze' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T13:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-03T13:35:00+00:00'
+[2024-11-04T13:39:39.612+0000] {logging_mixin.py:188} INFO - Status do passo "Extrair e Carregar na camada Bronze" (ID: s-02857732IWUIAO4QB8DQ): PENDING
+[2024-11-04T13:39:50.261+0000] {logging_mixin.py:188} INFO - Status do passo "Extrair e Carregar na camada Bronze" (ID: s-02857732IWUIAO4QB8DQ): PENDING
+[2024-11-04T13:40:00.808+0000] {logging_mixin.py:188} INFO - Status do passo "Extrair e Carregar na camada Bronze" (ID: s-02857732IWUIAO4QB8DQ): PENDING
+[2024-11-04T13:40:11.316+0000] {logging_mixin.py:188} INFO - Status do passo "Extrair e Carregar na camada Bronze" (ID: s-02857732IWUIAO4QB8DQ): COMPLETED
+[2024-11-04T13:40:11.317+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-11-04T13:40:11.324+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=add_step_job_bronze, execution_date=20241103T133500, start_date=20241104T133923, end_date=20241104T134011
+[2024-11-04T13:40:11.357+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-04T13:40:11.376+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

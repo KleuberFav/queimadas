@@ -1,0 +1,52 @@
+[2024-10-25T13:36:40.067+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.wait_step_job manual__2024-10-25T13:36:33.911682+00:00 [queued]>
+[2024-10-25T13:36:40.073+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.wait_step_job manual__2024-10-25T13:36:33.911682+00:00 [queued]>
+[2024-10-25T13:36:40.073+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-25T13:36:40.083+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): wait_step_job> on 2024-10-25 13:36:33.911682+00:00
+[2024-10-25T13:36:40.088+0000] {standard_task_runner.py:60} INFO - Started process 2410 to run task
+[2024-10-25T13:36:40.090+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'wait_step_job', 'manual__2024-10-25T13:36:33.911682+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpao2w5ry5']
+[2024-10-25T13:36:40.092+0000] {standard_task_runner.py:88} INFO - Job 126: Subtask wait_step_job
+[2024-10-25T13:36:40.121+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.wait_step_job manual__2024-10-25T13:36:33.911682+00:00 [running]> on host 622b1ac036ca
+[2024-10-25T13:36:40.175+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='wait_step_job' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T13:36:33.911682+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-25T13:36:33.911682+00:00'
+[2024-10-25T13:36:40.743+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:36:51.321+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:01.988+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:12.621+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:23.271+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:33.790+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:44.352+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:37:54.962+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:05.461+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:16.078+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:26.577+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:37.164+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:47.805+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:38:58.320+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:39:09.001+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:39:19.522+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:39:30.027+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:39:40.739+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:39:51.337+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:01.940+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:12.479+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:23.062+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:33.571+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:44.096+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:40:54.663+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:05.221+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:15.862+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:26.363+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:36.957+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:47.488+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:41:58.161+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:42:08.647+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: PENDING
+[2024-10-25T13:42:19.181+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:42:29.668+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:42:40.231+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:42:50.760+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:43:01.265+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:43:11.847+0000] {logging_mixin.py:188} INFO - Executando step job... Estado: RUNNING
+[2024-10-25T13:43:22.479+0000] {logging_mixin.py:188} INFO - Step job finalizado... Estado: COMPLETED
+[2024-10-25T13:43:22.480+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-10-25T13:43:22.487+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=wait_step_job, execution_date=20241025T133633, start_date=20241025T133640, end_date=20241025T134322
+[2024-10-25T13:43:22.521+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-25T13:43:22.537+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

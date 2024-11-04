@@ -1,0 +1,16 @@
+[2024-10-31T13:30:17.812+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_queimadas.check_url scheduled__2024-10-30T10:35:00+00:00 [queued]>
+[2024-10-31T13:30:17.822+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_queimadas.check_url scheduled__2024-10-30T10:35:00+00:00 [queued]>
+[2024-10-31T13:30:17.823+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-10-31T13:30:17.838+0000] {taskinstance.py:2214} INFO - Executing <Task(BranchPythonOperator): check_url> on 2024-10-30 10:35:00+00:00
+[2024-10-31T13:30:17.845+0000] {standard_task_runner.py:60} INFO - Started process 8850 to run task
+[2024-10-31T13:30:17.847+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_queimadas', 'check_url', 'scheduled__2024-10-30T10:35:00+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/dag_cria_emr.py', '--cfg-path', '/tmp/tmpnv6vettk']
+[2024-10-31T13:30:17.849+0000] {standard_task_runner.py:88} INFO - Job 260: Subtask check_url
+[2024-10-31T13:30:17.880+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_queimadas.check_url scheduled__2024-10-30T10:35:00+00:00 [running]> on host 3f04bb9d0c09
+[2024-10-31T13:30:17.937+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_queimadas' AIRFLOW_CTX_TASK_ID='check_url' AIRFLOW_CTX_EXECUTION_DATE='2024-10-30T10:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-30T10:35:00+00:00'
+[2024-10-31T13:30:18.208+0000] {python.py:202} INFO - Done. Returned value was: site_on
+[2024-10-31T13:30:18.209+0000] {branch.py:35} INFO - Branch into site_on
+[2024-10-31T13:30:18.209+0000] {skipmixin.py:178} INFO - Following branch site_on
+[2024-10-31T13:30:18.221+0000] {skipmixin.py:244} INFO - Skipping tasks [('site_off', -1)]
+[2024-10-31T13:30:18.250+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_queimadas, task_id=check_url, execution_date=20241030T103500, start_date=20241031T133017, end_date=20241031T133018
+[2024-10-31T13:30:18.300+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-10-31T13:30:18.322+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
