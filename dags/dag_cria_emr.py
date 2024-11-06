@@ -47,7 +47,7 @@ def _get_emr_client():
 
 
 # Função para criar o cluster EMR
-def _create_emr_cluster(ti):
+def _create_emr_cluster(ti):    
     emr_client = _get_emr_client()
 
     # Parâmetros do cluster EMR
@@ -61,7 +61,7 @@ def _create_emr_cluster(ti):
 
     # Script Bootstrap para instalar bibliotecas
     bootstrap_script = '''#!/bin/bash
-    sudo python3 -m pip install requests==2.26.0 boto3
+    sudo python3 -m pip install requests==2.26.0 boto3 ConfigParser
     '''
 
     # Salvar o script de bootstrap em um bucket S3
@@ -69,8 +69,9 @@ def _create_emr_cluster(ti):
     config.read_file(open('/opt/airflow/config/aws.cfg'))
     aws_access_key_id = config.get('EMR', 'AWS_ACCESS_KEY_ID')
     aws_secret_access_key = config.get('EMR', 'AWS_SECRET_ACCESS_KEY')
+    bucket_log = config.get('S3', 'BUCKET')
     
-    s3_bucket = 'buckets-logs-emr'
+    s3_bucket = bucket_log
     s3_key = 'bootstrap/install-requests-logging.sh'
     s3_client = boto3.client(
         's3', 

@@ -1,2 +1,4 @@
 aws.cfg
 logs/
+dags/__pycache__/
+plugins/__pycache__/
