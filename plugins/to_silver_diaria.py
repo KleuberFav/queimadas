@@ -23,7 +23,7 @@ except Exception as e:
 logging.basicConfig(level=logging.INFO)
 
 # Configurações do bucket S3
-s3_bucket = '001-lake-ambiental'  # Nome do seu bucket S3
+s3_bucket = 'nome_seu_bucket'  # Nome do seu bucket S3
 
 # Função para pegar a data de ontem
 def get_yesterday_date():

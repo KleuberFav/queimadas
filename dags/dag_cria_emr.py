@@ -159,63 +159,14 @@ def _check_emr_cluster_state(ti):
         else:
             raise Exception(f'Erro! Estado do cluster: {state}')
 
-# Função para adicionar step_job da camada bronze
-def _add_step_job_bronze(ti):
-    time.sleep(5)
-    cluster_id = ti.xcom_pull(key='cluster_id')
-    emr_client = _get_emr_client()
-    
-    # Código Python no S3
-    s3_python_script = 's3://codigosemr/extract_to_bronze.py'  # Código .py para executar script spark
-
+# Função genérica para adicionar um step_job no EMR
+def _add_step_job(emr_client, cluster_id, step_name, s3_python_script):
     # Adiciona um passo para executar o código Python
     step_response = emr_client.add_job_flow_steps(
         JobFlowId=cluster_id,
         Steps=[
             {
-                'Name': 'Extrair e Carregar na camada Bronze',
-                'ActionOnFailure': 'CONTINUE',
-                'HadoopJarStep': {
-                    'Jar': 'command-runner.jar',
-                    'Args': [
-                        'spark-submit',
-                        s3_python_script
-                    ]
-                }
-            }
-        ]
-    )
-
-    step_job_id = step_response['StepIds'][0] 
-    ti.xcom_push(key='step_job_id', value=step_job_id)
-
-    # Aguardar a execução do passo
-    while True:
-        time.sleep(10)  # Aguarda 10 segundos entre as verificações
-        step_info = emr_client.describe_step(ClusterId=cluster_id, StepId=step_job_id)['Step']
-        step_status = step_info['Status']['State']
-        step_job_id = step_info['Id']  # Captura o ID do passo
-        step_name = step_info['Name']  # Captura o nome do passo
-        print(f'Status do passo "{step_name}" (ID: {step_job_id}): {step_status}')
-        
-        if step_status in ['COMPLETED', 'FAILED', 'CANCELLED']:
-            break
-
-# Função para adicionar step_job da camada silver
-def _add_step_job_silver(ti):
-    time.sleep(5)
-    cluster_id = ti.xcom_pull(key='cluster_id')
-    emr_client = _get_emr_client()
-    
-    # Código Python no S3
-    s3_python_script = 's3://codigosemr/to_silver_diaria.py'  # Código .py para executar script spark
-
-    # Adiciona um passo para executar o código Python
-    step_response = emr_client.add_job_flow_steps(
-        JobFlowId=cluster_id,
-        Steps=[
-            {
-                'Name': 'Transformar e Carregar na Camada Silver',
+                'Name': step_name,
                 'ActionOnFailure': 'CONTINUE',
                 'HadoopJarStep': {
                     'Jar': 'command-runner.jar',
@@ -229,8 +180,7 @@ def _add_step_job_silver(ti):
     )
 
     step_job_id = step_response['StepIds'][0]
-    ti.xcom_push(key='step_job_id', value=step_job_id)
-
+    
     # Aguardar a execução do passo
     while True:
         time.sleep(10)  # Aguarda 10 segundos entre as verificações
@@ -242,132 +192,38 @@ def _add_step_job_silver(ti):
         
         if step_status in ['COMPLETED', 'FAILED', 'CANCELLED']:
             break
+    return step_job_id
 
-# Função para adicionar step_job da camada gold estado
+# Chamadas específicas para cada camada usando a função genérica
+def _add_step_job_bronze(ti):
+    emr_client = _get_emr_client()
+    cluster_id = ti.xcom_pull(key='cluster_id')
+    step_job_id = _add_step_job(emr_client, cluster_id, 'Extrair e Carregar na camada Bronze', 's3://codigosemr/extract_to_bronze.py')
+    ti.xcom_push(key='step_job_id', value=step_job_id)
+
+def _add_step_job_silver(ti):
+    emr_client = _get_emr_client()
+    cluster_id = ti.xcom_pull(key='cluster_id')
+    step_job_id = _add_step_job(emr_client, cluster_id, 'Transformar e Carregar na Camada Silver', 's3://codigosemr/to_silver_diaria.py')
+    ti.xcom_push(key='step_job_id', value=step_job_id)
+
 def _add_step_job_gold_estado(ti):
-    time.sleep(5)
-    cluster_id = ti.xcom_pull(key='cluster_id')
     emr_client = _get_emr_client()
-    
-    # Código Python no S3
-    s3_python_script = 's3://codigosemr/to_gold_estado_diaria.py'  # Código .py para executar script spark
-
-    # Adiciona um passo para executar o código Python
-    step_response = emr_client.add_job_flow_steps(
-        JobFlowId=cluster_id,
-        Steps=[
-            {
-                'Name': 'Agregar e Carregar na Camada Gold - Estado',
-                'ActionOnFailure': 'CONTINUE',
-                'HadoopJarStep': {
-                    'Jar': 'command-runner.jar',
-                    'Args': [
-                        'spark-submit',
-                        s3_python_script
-                    ]
-                }
-            }
-        ]
-    )
-
-    step_job_id = step_response['StepIds'][0] 
+    cluster_id = ti.xcom_pull(key='cluster_id')
+    step_job_id = _add_step_job(emr_client, cluster_id, 'Agregar e Carregar na Camada Gold - Estado', 's3://codigosemr/to_gold_estado_diaria.py')
     ti.xcom_push(key='step_job_id', value=step_job_id)
 
-    # Aguardar a execução do passo
-    while True:
-        time.sleep(10)  # Aguarda 10 segundos entre as verificações
-        step_info = emr_client.describe_step(ClusterId=cluster_id, StepId=step_job_id)['Step']
-        step_status = step_info['Status']['State']
-        step_job_id = step_info['Id']  # Captura o ID do passo
-        step_name = step_info['Name']  # Captura o nome do passo
-        print(f'Status do passo "{step_name}" (ID: {step_job_id}): {step_status}')
-        
-        if step_status in ['COMPLETED', 'FAILED', 'CANCELLED']:
-            break
-
-# Função para adicionar step_job da camada gold municipio
 def _add_step_job_gold_municipio(ti):
-    time.sleep(5)
-    cluster_id = ti.xcom_pull(key='cluster_id')
     emr_client = _get_emr_client()
-    
-    # Código Python no S3
-    s3_python_script = 's3://codigosemr/to_gold_municipio_diaria.py'  # Código .py para executar script spark
-
-    # Adiciona um passo para executar o código Python
-    step_response = emr_client.add_job_flow_steps(
-        JobFlowId=cluster_id,
-        Steps=[
-            {
-                'Name': 'Agregar e Carregar na Camada Gold - Municipio',
-                'ActionOnFailure': 'CONTINUE',
-                'HadoopJarStep': {
-                    'Jar': 'command-runner.jar',
-                    'Args': [
-                        'spark-submit',
-                        s3_python_script
-                    ]
-                }
-            }
-        ]
-    )
-
-    step_job_id = step_response['StepIds'][0] 
+    cluster_id = ti.xcom_pull(key='cluster_id')
+    step_job_id = _add_step_job(emr_client, cluster_id, 'Agregar e Carregar na Camada Gold - Municipio', 's3://codigosemr/to_gold_municipio_diaria.py')
     ti.xcom_push(key='step_job_id', value=step_job_id)
 
-    # Aguardar a execução do passo
-    while True:
-        time.sleep(10)  # Aguarda 10 segundos entre as verificações
-        step_info = emr_client.describe_step(ClusterId=cluster_id, StepId=step_job_id)['Step']
-        step_status = step_info['Status']['State']
-        step_job_id = step_info['Id']  # Captura o ID do passo
-        step_name = step_info['Name']  # Captura o nome do passo
-        print(f'Status do passo "{step_name}" (ID: {step_job_id}): {step_status}')
-        
-        if step_status in ['COMPLETED', 'FAILED', 'CANCELLED']:
-            break
-
-# Função para adicionar step_job da camada gold bioma
 def _add_step_job_gold_bioma(ti):
-    time.sleep(5)
-    cluster_id = ti.xcom_pull(key='cluster_id')
     emr_client = _get_emr_client()
-    
-    # Código Python no S3
-    s3_python_script = 's3://codigosemr/to_gold_bioma_diaria.py'  # Código .py para executar script spark
-
-    # Adiciona um passo para executar o código Python
-    step_response = emr_client.add_job_flow_steps(
-        JobFlowId=cluster_id,
-        Steps=[
-            {
-                'Name': 'Agregar e Carregar na Camada Gold - Bioma',
-                'ActionOnFailure': 'CONTINUE',
-                'HadoopJarStep': {
-                    'Jar': 'command-runner.jar',
-                    'Args': [
-                        'spark-submit',
-                        s3_python_script
-                    ]
-                }
-            }
-        ]
-    )
-
-    step_job_id = step_response['StepIds'][0]  # Corrigido aqui
+    cluster_id = ti.xcom_pull(key='cluster_id')
+    step_job_id = _add_step_job(emr_client, cluster_id, 'Agregar e Carregar na Camada Gold - Bioma', 's3://codigosemr/to_gold_bioma_diaria.py')
     ti.xcom_push(key='step_job_id', value=step_job_id)
-
-    # Aguardar a execução do passo
-    while True:
-        time.sleep(10)  # Aguarda 10 segundos entre as verificações
-        step_info = emr_client.describe_step(ClusterId=cluster_id, StepId=step_job_id)['Step']
-        step_status = step_info['Status']['State']
-        step_job_id = step_info['Id']  # Captura o ID do passo
-        step_name = step_info['Name']  # Captura o nome do passo
-        print(f'Status do passo "{step_name}" (ID: {step_job_id}): {step_status}')
-        
-        if step_status in ['COMPLETED', 'FAILED', 'CANCELLED']:
-            break
   
 # Função para Encerrar o Cluster
 def _terminate_emr_cluster(ti):

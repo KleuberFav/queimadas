@@ -9,7 +9,7 @@ from botocore.exceptions import NoCredentialsError, ClientError
 logging.basicConfig(level=logging.INFO)
 
 # Configurações
-s3_bucket = '001-lake-ambiental'  # Nome do seu bucket S3
+s3_bucket = 'nome_seu_bucket'  # Nome do seu bucket S3
 max_attempts = 10  # Máximo de tentativas
 base_url = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/mensal/Brasil/focos_mensal_br_"
 headers = {
