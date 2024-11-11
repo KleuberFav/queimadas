@@ -155,6 +155,9 @@ Crie uma pasta chamada config e dentro dela um arquivo chamadao aws.cfg. Dentro 
 [EMR]
 AWS_ACCESS_KEY_ID = sua_chave_acesso
 AWS_SECRET_ACCESS_KEY = sua_chave_secreta_acesso
+
+[S3]
+BUCKET = nome_seu_bucket
 ```
 
 
